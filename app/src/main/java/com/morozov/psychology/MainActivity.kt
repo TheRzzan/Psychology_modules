@@ -64,10 +64,26 @@ class MainActivity : AppCompatActivity(), ExpMainView {
 
     }
 
+    override fun showExTest(position: Int) {
+
+    }
+
+    override fun showExFixTest(position: Int) {
+
+    }
+
+    override fun showExResults(position: Int) {
+
+    }
+
+    override fun showExFixResults(position: Int) {
+
+    }
+
     /*
-    *  Helper methods
-    *
-    *  */
+        *  Helper methods
+        *
+        *  */
     private fun setFragment(fragment: Fragment, b: Boolean = false) {
         val transaction = supportFragmentManager
             .beginTransaction()
