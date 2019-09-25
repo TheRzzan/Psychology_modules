@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Psychology_modules_new</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <!-- Bottom navigation -->
+    <string name="title_examples">Проверка</string>
+    <string name="title_diary">Дневник</string>
+    <string name="title_tests">Тесты</string>
+    <string name="title_mind_change">Изменения</string>
+    <string name="title_consultation">Профиль</string>
 </resources>
