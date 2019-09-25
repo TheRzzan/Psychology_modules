@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.morozov.diary.domain.DiaMainView
 import com.morozov.experiments.domain.ExpMainView
 import com.morozov.experiments.fragments.cards.ExpCardsFragment
 import com.morozov.experiments.fragments.exercises.desrciption.ExDescriptionFragment
@@ -15,8 +16,9 @@ import com.morozov.experiments.fragments.fix.results.FixResultsFragment
 import com.morozov.experiments.fragments.fix.tests.FixTestsFragment
 import com.morozov.experiments.utility.AppConstants
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
-class MainActivity : AppCompatActivity(), ExpMainView {
+class MainActivity : AppCompatActivity(), ExpMainView, DiaMainView {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -203,13 +205,29 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     }
 
     override fun showExpDiaryCards() {
+        showDiaryCards()
+    }
+
+    /*
+    * DiaMainView implementation
+    *
+    * */
+    override fun showDiaryCards() {
+
+    }
+
+    override fun showDiaryViewing(date: Date) {
+
+    }
+
+    override fun showDiaryEditor(isNew: Boolean, date: Date) {
 
     }
 
     /*
-    *  Helper methods
-    *
-    *  */
+        *  Helper methods
+        *
+        *  */
     private fun setFragment(fragment: Fragment, b: Boolean = false) {
         val transaction = supportFragmentManager
             .beginTransaction()
