@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="57dp">
+
+    <ScrollView
+            android:id="@+id/scrollMain"
+            style="@style/ScrollViewStyle">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/textHeader"
+                    style="@style/TextView.Primary.Header"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="@string/checking"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerCardsExper"
+                    style="@style/RecyclerViewStyle"
+                    android:layout_below="@+id/textHeader"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerCardsFixing"
+                    style="@style/RecyclerViewStyle"
+                    android:layout_below="@+id/recyclerCardsExper"/>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
