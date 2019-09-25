@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/ScrollViewStyle"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:id="@+id/linearSituation"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/textDiaryEditorTime"
+                style="@style/TextView.Primary.Header"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="18 сентября, 2019"/>
+
+        <TextView
+                android:text="Что произошло? Опишите максимально объективно."
+                style="@style/TextView.Secondary"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:hint="Ситуация"
+                android:ems="10"
+                style="@style/EditTextStyle"
+                android:id="@+id/editTextDiarySituation"/>
+
+        <TextView
+                android:text="О чем вы думали?"
+                style="@style/TextView.Secondary"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:hint="Мысли"
+                android:ems="10"
+                style="@style/EditTextStyle"
+                android:id="@+id/editTextDiaryThink"/>
+
+        <TextView
+                android:text="Выберите одну или несколько эмоций. Оцените степень выраженности в %."
+                style="@style/TextView.Secondary"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+
+        <LinearLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:srcCompat="@drawable/emotion_non_active_joy"
+                        android:id="@+id/imageJoy"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textJoy"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_sedness"
+                    android:id="@+id/imageSadness"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textSadness"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_annoyance"
+                    android:id="@+id/imageAnnoyance"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textAnnoyance"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_anxiety"
+                    android:id="@+id/imageAnxiety"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textAnxiety"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_disgust"
+                    android:id="@+id/imageDisgust"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textDisgust"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_interest"
+                    android:id="@+id/imageInterest"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textInterest"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/diary_emotions_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_guilt"
+                    android:id="@+id/imageGuilt"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textGuilt"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/emotion_non_active_resentment"
+                    android:id="@+id/imageResentment"/>
+
+                <TextView
+                        android:text="30%"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content" android:visibility="gone"
+                        android:layout_height="wrap_content" android:id="@+id/textResentment"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/textDiaryEmotion"
+                    android:text="Радость"
+                    style="@style/TextView.Secondary"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@android:color/black"/>
+
+            <TextView
+                    android:id="@+id/textDiaryPercent"
+                    android:text="70%"
+                    android:textStyle="bold"
+                    style="@style/TextView.Secondary"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/black"/>
+        </RelativeLayout>
+
+        <SeekBar
+                android:id="@+id/seekBarDiaryEditor"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:min="1"
+                android:max="100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="Что вы сделали или что вам захотелось сделать? Как отреагировало ваше тело?"
+                style="@style/TextView.Secondary"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPersonName"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:hint="Поведение и телесные ощущения"
+                android:ems="10"
+                style="@style/EditTextStyle"
+                android:id="@+id/editTextDiarySensation"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:id="@+id/buttonDiarySave"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/fab_add"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
