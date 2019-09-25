@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.morozov.experiments.domain.ExpMainView
 import com.morozov.experiments.fragments.cards.CardsFragment
 import com.morozov.experiments.fragments.exercises.desrciption.ExDescriptionFragment
@@ -49,6 +50,49 @@ class MainActivity : AppCompatActivity(), ExpMainView {
 
         showExpCards()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        linearBack.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
+    override fun onBackPressed() {
+        when (supportFragmentManager.backStackEntryCount) {
+            0 -> super.onBackPressed()
+            1 -> {
+                showBottomNav()
+                hideBackArrow()
+                supportFragmentManager.popBackStack()
+            }
+            else -> {
+                val fragment = supportFragmentManager.fragments[supportFragmentManager.fragments.size - 1]
+                if (fragment is ExTestsFragment ||
+                    fragment is FixTestsFragment) {
+                    hideBackArrow()
+                }
+
+                supportFragmentManager.popBackStack()
+            }
+        }
+    }
+
+    /*
+    * Interface controls
+    *
+    * */
+    fun showBottomNav() {
+        navigation.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNav() {
+        navigation.visibility = View.GONE
+    }
+
+    fun showBackArrow() {
+        linearBack.visibility = View.VISIBLE
+    }
+
+    fun hideBackArrow() {
+        linearBack.visibility = View.GONE
     }
 
     /*
@@ -56,6 +100,9 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     *
     * */
     override fun showExpCards() {
+        showBottomNav()
+        hideBackArrow()
+
         val fragment = CardsFragment()
         fragment.mActivityPresenter = this
 
@@ -64,6 +111,9 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     }
 
     override fun showExDescr(position: Int) {
+        hideBottomNav()
+        hideBackArrow()
+
         val exDescriptionFragment = ExDescriptionFragment()
 
         val bundle = Bundle()
@@ -72,10 +122,14 @@ class MainActivity : AppCompatActivity(), ExpMainView {
         exDescriptionFragment.arguments = bundle
         exDescriptionFragment.mActivityPresenter = this
 
+        clearBackStack()
         setFragment(exDescriptionFragment, true)
     }
 
     override fun showExFixDescr(position: Int) {
+        hideBottomNav()
+        hideBackArrow()
+
         val exFixDescriptionFragment = FixDescriptionFragment()
 
         val bundle = Bundle()
@@ -84,10 +138,14 @@ class MainActivity : AppCompatActivity(), ExpMainView {
         exFixDescriptionFragment.arguments = bundle
         exFixDescriptionFragment.mActivityPresenter = this
 
+        clearBackStack()
         setFragment(exFixDescriptionFragment, true)
     }
 
     override fun showExTest(position: Int) {
+        hideBottomNav()
+        showBackArrow()
+
         val exTestsFragment = ExTestsFragment()
 
         val bundle = Bundle()
@@ -100,6 +158,9 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     }
 
     override fun showExFixTest(position: Int) {
+        hideBottomNav()
+        showBackArrow()
+
         val exFixTestsFragment = FixTestsFragment()
 
         val bundle = Bundle()
@@ -112,6 +173,9 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     }
 
     override fun showExResults(position: Int) {
+        hideBottomNav()
+        showBackArrow()
+
         val exResultsFragment = ExResultsFragment()
 
         val bundle = Bundle()
@@ -124,6 +188,9 @@ class MainActivity : AppCompatActivity(), ExpMainView {
     }
 
     override fun showExFixResults(position: Int) {
+        hideBottomNav()
+        showBackArrow()
+
         val exfixResultsFragment = FixResultsFragment()
 
         val bundle = Bundle()
