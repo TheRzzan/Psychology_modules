@@ -12,7 +12,7 @@ import com.morozov.diary.R
 import com.morozov.diary.domain.DiaMainView
 import com.morozov.diary.domain.models.EmotionModel
 import com.morozov.diary.domain.models.ThinkModel
-import com.morozov.diary.utility.AppConstants
+import com.morozov.diary.utility.DiaConstants
 import com.morozov.diary.utility.DateConverter
 import kotlinx.android.synthetic.main.fragment_think_editor.*
 import java.text.SimpleDateFormat
@@ -60,7 +60,7 @@ class DiaEditorFragment: MvpAppCompatFragment(), EditorView {
 
         buttonDiarySave.setOnClickListener {
             if (bundle != null) {
-                if (bundle.getBoolean(AppConstants.DIARY_IS_NEW_ITEM))
+                if (bundle.getBoolean(DiaConstants.DIARY_IS_NEW_ITEM))
                     mPresenter.saveNewThink(getThink())
                 else
                     mPresenter.saveOldThink(getThink())
@@ -118,13 +118,13 @@ class DiaEditorFragment: MvpAppCompatFragment(), EditorView {
         val bundle = this.arguments
 
         mDate = if (bundle != null) {
-            bundle.getSerializable(AppConstants.DIARY_SELECTED_DAY) as Date
+            bundle.getSerializable(DiaConstants.DIARY_SELECTED_DAY) as Date
         } else {
             Date()
         }
 
         if (bundle != null) {
-            if (bundle.getBoolean(AppConstants.DIARY_IS_NEW_ITEM))
+            if (bundle.getBoolean(DiaConstants.DIARY_IS_NEW_ITEM))
                 mPresenter.initNewThink(mDate)
             else
                 mPresenter.loadOldThink(mDate)
@@ -185,7 +185,7 @@ class DiaEditorFragment: MvpAppCompatFragment(), EditorView {
         var date = Date()
 
         if (bundle != null) {
-            date = if (bundle.getBoolean(AppConstants.DIARY_IS_NEW_ITEM))
+            date = if (bundle.getBoolean(DiaConstants.DIARY_IS_NEW_ITEM))
                 mPresenter.dateNew
             else
                 mPresenter.dateOld

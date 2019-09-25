@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.morozov.experiments.domain.ExpMainView
-import com.morozov.experiments.fragments.cards.CardsFragment
+import com.morozov.experiments.fragments.cards.ExpCardsFragment
 import com.morozov.experiments.fragments.exercises.desrciption.ExDescriptionFragment
 import com.morozov.experiments.fragments.exercises.results.ExResultsFragment
 import com.morozov.experiments.fragments.exercises.tests.ExTestsFragment
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity(), ExpMainView {
         showBottomNav()
         hideBackArrow()
 
-        val fragment = CardsFragment()
+        val fragment = ExpCardsFragment()
         fragment.mActivityPresenter = this
 
         clearBackStack()
@@ -202,7 +202,7 @@ class MainActivity : AppCompatActivity(), ExpMainView {
         setFragment(exfixResultsFragment, true)
     }
 
-    override fun showDiaryCards() {
+    override fun showExpDiaryCards() {
 
     }
 

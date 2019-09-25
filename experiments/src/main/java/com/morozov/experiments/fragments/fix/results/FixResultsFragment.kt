@@ -28,7 +28,7 @@ class FixResultsFragment: MvpAppCompatFragment(), ResultsView {
 
         buttonFixDiary.setOnClickListener {
             if (mActivityPresenter != null)
-                mActivityPresenter.showDiaryCards()
+                mActivityPresenter.showExpDiaryCards()
         }
 
         buttonFixChooseExperiment.setOnClickListener {

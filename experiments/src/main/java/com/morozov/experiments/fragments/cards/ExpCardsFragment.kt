@@ -16,7 +16,7 @@ import com.morozov.experiments.fragments.cards.mvp.presenter.CardsPresenter
 import com.morozov.experiments.fragments.cards.mvp.view.CardsView
 import kotlinx.android.synthetic.main.fragment_cards.*
 
-class CardsFragment: MvpAppCompatFragment(), CardsView, OnItemClickListener {
+class ExpCardsFragment: MvpAppCompatFragment(), CardsView, OnItemClickListener {
 
     /*
     * Moxy presenters

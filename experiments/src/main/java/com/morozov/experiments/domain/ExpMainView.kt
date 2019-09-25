@@ -16,5 +16,5 @@ interface ExpMainView {
 
     fun showExFixResults(position: Int)
 
-    fun showDiaryCards()
+    fun showExpDiaryCards()
 }

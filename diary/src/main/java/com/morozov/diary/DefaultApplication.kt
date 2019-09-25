@@ -14,8 +14,8 @@ class DefaultApplication: Application() {
         super.onCreate()
 
         diaryComponent = DaggerDiaryComponent
-                         .builder()
-                         .diaryModule(DiaryModule())
-                         .build()
+            .builder()
+            .diaryModule(DiaryModule())
+            .build()
     }
 }

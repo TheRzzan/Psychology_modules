@@ -1,6 +1,6 @@
 package com.morozov.experiments.utility
 
-class AppConstants {
+class ExpConstants {
     companion object{
         const val EXP_POSITION = "exp_position"
     }

@@ -10,7 +10,7 @@ import com.morozov.diary.R
 import com.morozov.diary.domain.DiaMainView
 import com.morozov.diary.domain.models.EmotionModel
 import com.morozov.diary.domain.models.ThinkModel
-import com.morozov.diary.utility.AppConstants
+import com.morozov.diary.utility.DiaConstants
 import com.morozov.diary.utility.DateConverter
 import kotlinx.android.synthetic.main.fragment_think_viewing.*
 import java.text.SimpleDateFormat
@@ -37,7 +37,7 @@ class DiaThinkViewingFragment: MvpAppCompatFragment(), ThinkViewingView {
         if (bundle != null)
             buttonDiaryEditThink.setOnClickListener {
                 mActivityPresenter.showDiaryEditor(false,
-                    bundle.getSerializable(AppConstants.DIARY_SELECTED_DAY) as Date)
+                    bundle.getSerializable(DiaConstants.DIARY_SELECTED_DAY) as Date)
             }
     }
 
@@ -46,7 +46,7 @@ class DiaThinkViewingFragment: MvpAppCompatFragment(), ThinkViewingView {
 
         val bundle = this.arguments
         if (bundle != null)
-            mPresenter.showThink(bundle.getSerializable(AppConstants.DIARY_SELECTED_DAY) as Date)
+            mPresenter.showThink(bundle.getSerializable(DiaConstants.DIARY_SELECTED_DAY) as Date)
     }
 
     /*
